@@ -1,0 +1,234 @@
+/* Grammar Guru Style Sheet */
+
+* {
+    -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    /* border: 1px solid red; */
+    /*margin: 0;
+    padding: 0;
+    outline: 0;*/
+}
+
+body {
+    
+    background-image: url("../images/scenicMountain.jpg");
+    background-size: cover;
+    margin: 0;
+    
+
+    /*width: 100%;
+    height: 100%;
+    overflow: hidden;*/
+}
+
+/* body {
+    
+    margin: 0px;
+} */
+    /* background-color: skyblue; */
+    /*  background-image: url('../images/bk-2.jpg');
+    background-size: cover; */
+    /* background-image: linear-gradient(to left bottom, #ddb00b, #ff8222, #ff4059, #ff009c, #d620e7);*/ 
+    /* Source (https://mycolor.space/gradient?ori=to+left+bottom&hex=%23DDB00B&hex2=%23D620E7&sub=1)
+}
+
+nav {
+    background-color: white;
+    opacity:0.9;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+}
+
+
+
+/* Main Input Div */
+.audio {
+    Left: 5px;
+}
+#main-content {   
+    border: 1px solid #ccc;
+    margin: auto;
+    width: 50%;  
+    height: 200px;
+    background-color: cyan;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+    margin-top: 200px;  
+    z-index: 2;
+}
+#transform{
+        clear: both;
+        overflow: auto;
+        border: 1px solid #ccc;
+        margin: auto;
+        padding: 3px;
+        width: 50%;  
+        height: 200px;
+        background-color: silver;
+        -webkit-box-shadow: 0 10px 6px -6px #777;
+        -moz-box-shadow: 0 10px 6px -6px #777;
+        box-shadow: 0 10px 6px -6px #777;
+        margin-top: 200px; 
+        transform: rotate(20deg);
+        position: absolute;
+        z-index: 1;
+
+}
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+/* User Input Div */
+#user-input-div {
+    clear: both;
+    overflow: auto;
+    margin-top: 20px;
+    width: 100%;
+    padding: 0px 20px;
+    text-align: center;
+}
+
+/* Input Text */
+textarea[type=text] {
+    padding:5px; 
+    text-align: center;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    font-size: 20px;
+    
+    width: 100%;
+    height: 80px;
+    font-family: times;
+    margin: 2px;
+}
+
+
+/* Input Text */
+textarea[type=text]:focus {
+    border-color:#333;
+}
+
+/* Button Div */
+#button-div {
+    margin: auto;
+    width: 100%;
+    /* border: 1px solid red;*/
+    padding: 0px 20px;
+    display: flex;
+    margin-top: 20px;
+}
+
+/* Submit and Clear Buttons */
+button[type=submit] {
+    width: 50%;
+    margin: 4px;
+    padding:20px 0px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    
+}
+
+button[type=submit]:hover {
+    background-color: purple; 
+    color: white;
+    font-weight: bold;
+} 
+
+/*
+Button Effects: https://codepen.io/giana/pen/BZaGyP?q=box%20shadow&order=popularity&depth=everything&show_forks=false
+*/
+.guruContainer {
+    background-color: silver;
+    margin: auto;
+    border: 2px solid gray;
+    width: 220px;
+    height: 220px;
+
+}
+.avatar-guru {
+    animation: float 6s ease-in-out infinite;
+    margin: auto;
+}
+nav {
+    top: 0;
+    position: fixed;
+
+    width: 100%;
+    /* background-image: url(../images/bk-2.jpg); */
+    
+}
+footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    /* background-color: white; */
+    /* background-image: url(../images/bk-2.jpg); */
+    opacity:0.9;
+}
+
+.color {
+    /* This will mark the bad word red */
+    /*text-decoration: 1px underline red;*/
+    color: red;
+}
+
+.badword {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.badword .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: white;
+    color: green;
+    font-weight: bold;
+    border: 1px solid grey;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.badword:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* .article {
+    width:100px;
+    height:100px;
+    border:1px solid grey;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 10px;
+    position: relative;
+    color:white;
+   } */
+   
+ .image { background: linear-gradient(
+   rgba(255, 0, 0, 0.45),
+   rgba(255, 0, 0, 0.45)
+   ),url("../images/scenicMountain.jpg")cover no-repeat;
+/* background-image: url("../images/scenicMountain.jpg");
+background-size: cover; */
+}
+   
+
