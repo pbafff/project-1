@@ -7,56 +7,70 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Grammar Guru | Grammar and Spell Check Your Entire Website</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 </head>
 
-<body>
+<body class="image">
 
 
 
     <!-- Nav Bar -->
     <nav>
-        <h1>Grammar Guru</h1>
 
-        <!-- Nav -->
-        <!--
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        -->
-    </nav>
-    <div class="audio">
-        <audio controls autoplay loop>
-            <source src="assets/images/guruTibetanBowls.mp3" type="audio/mp3">
-        </audio>
-    </div>
-    <div class="guruContainer">
-        <div class="guru-avatar">
-            <Img src="assets/images/guru-avatar.png">
+        <div id="nav-1">
+            <h1>Grammar Guru</h1>
         </div>
-    </div>
-    <!-- Input Field -->
-    <!-- <div id="transform">
-    </div> -->
+        <div id="nav-2">
+            <ul>
+                <li>CONTACT</li>
+                <li>PLANS AND PRICING</li>
+                <li>FAQ</li>
+            </ul>
+        </div>
+    </nav>
 
     <div id="main-content">
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'London')">User Input</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">Sitemap URL</button>
+            <div id="London" class="tabcontent">
+                <h3>User Input</h3>
+                <p>London is the capital city of England.</p>
+                <!-- user input  -->
+                <div id="user-input-div">
+                    <!-- Try This Instead of Input <textarea id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"></textarea>-->
+                    <!-- <input id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"> -->
+                    <textarea id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"></textarea>
+                </div>
+                <div id="test">test output</div>
+                <div id="button-div">
+                    <button id="clear-button" type="submit">Clear</button>
+                    <button id="submit-button" type="submit">Submit</button>
+                </div>
+            </div>
+            <div id="Paris" class="tabcontent">
+                <h3>Sitemap URL</h3>
+                <p>Paris is the capital of France.</p>
+                <!-- site map url -->
 
-        <div id="user-input-div">
-            <!-- Try This Instead of Input <textarea id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"></textarea>-->
-            <!-- <input id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"> -->
-            <textarea id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"></textarea>
-        </div>
-        <div id="button-div">
-            <button id="clear-button" type="submit">Clear</button>
-            <button id="submit-button" type="submit">Submit</button>
+                <div id="user-input-div">
+                    <!-- Try This Instead of Input <textarea id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"></textarea>-->
+                    <!-- <input id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"> -->
+                    <textarea id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"></textarea>
+                </div>
+                <div id="test">test output</div>
+                <div id="button-div">
+                    <button id="clear-button" type="submit">Clear</button>
+                    <button id="submit-button" type="submit">Submit</button>
+                </div>
+            </div>
+
         </div>
 
 
     </div>
 
-    <div id="test"></div>
-    </div>
 
     <!-- Footer -->
     <footer>
