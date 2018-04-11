@@ -25,18 +25,6 @@ body {
     
 }
 
-/* body:before {
-   opacity: 0.5;
-   content:" ";
-   top:0;
-   left:0;
-   width:100%;
-   height:100%;
-   z-index: 0;
-   position: absolute; 
-    display: block;
-} */
-
 /* BACKGROUND IMAGE WITH OVERLAY */
 /* SOURCE: (https://spin.atomicobject.com/2015/04/07/css-multiple-backgrounds/) */
 
@@ -52,19 +40,11 @@ body {
     padding: 0;
 }
 
-
-/* linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),  */
-
 /* NAV + HEADER */
 nav {
     top: 0;
     width: 100%;
     position: fixed;
-    /* background-color: white;
-    opacity:0.9; */
-    /* box-shadow: 0 10px 6px -6px #777;
-    -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777; */  
 }
 
 h1 {
@@ -77,15 +57,10 @@ h1 {
 ul {
     right: 0px;
     position: absolute;
-    top: 20px;
+    top: 28px;
     list-style-type: none;
     color: white;
-    /* display:inline-block;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; */
-    /* top: 20px; */
- }
+}
 
  li {
     padding: 20px;
@@ -198,6 +173,21 @@ textarea[type=text]:focus {
     border-color:#333;
 }
 
+/* Input Text */
+#test {
+    border:1px solid #ccc;
+    background-color: white;
+    /* margin-top: 20px; */
+    width: 100%;
+    height: 80px;
+    padding: 0px 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+
+
+
 /* Button Div */
 #button-div {
     margin: auto;
@@ -247,15 +237,7 @@ Button Effects: https://codepen.io/giana/pen/BZaGyP?q=box%20shadow&order=popular
     margin: auto;
 }
 
-footer {
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    color: white;
-}
+
 
 .color {
     color: red;
@@ -266,12 +248,100 @@ footer {
 
 /* HOVERING OVER WORDS */
 .badword {
+    display: none;
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
+    background-color: yellow;
 }
 
-.badword .tooltiptext {
+.bwtext {
+    visibility: hidden;
+    position: absolute;
+}
+
+:hover .bwtext {
+    visibility: visible;
+    background-color: white;
+    border: 1px solid black;
+    height: 20px;
+    cursor:pointer;
+    display: block;
+    position: absolute;
+    width: 350px;
+    height: 180px;
+    line-height: 20px;
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+    z-index: 999;
+    color: rgb(113, 157, 171);
+    background: rgb(255, 255, 255);
+    border: 4px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    text-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 1px;
+    box-shadow: #333 -4px 4px 16px 2px;
+    -webkit-transition: opacity 100ms ease-in;
+    -o-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: none;
+    top: 220px;
+    left: 220px;
+}
+
+/* span:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #FFFFFF transparent transparent;
+    top: 22px;
+    left: -23px;
+} */
+
+
+
+.tooltip:hover span {
+    font-family: Calibri, Tahoma, Geneva, sans-serif;
+    position: absolute;
+    left: 1em;
+    top: 2em;
+    z-index: 99;
+    margin-left: 0;
+    width: 250px;
+  }
+  .tooltip:hover img {
+    border: 0;
+    margin: -10px 0 0 -55px;
+    float: left;
+    position: absolute;
+  }
+  .tooltip:hover em {
+    font-family: Candara, Tahoma, Geneva, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: block;
+    padding: 0.2em 0 0.6em 0;
+  }
+  .classic { padding: 0.8em 1em; }
+  .custom { padding: 0.5em 0.8em 0.8em 2em; }
+  * html a:hover { background: transparent; }
+
+
+
+
+
+
+
+
+
+
+
+/* .badword .bwtext {
+    display: inline-block;
     visibility: hidden;
     width: 120px;
     background-color: white;
@@ -283,13 +353,131 @@ footer {
     padding: 5px 0;
 
     /* Position the tooltip */
-    position: absolute;
+    /* position: absolute;
     z-index: 1;
-}
+} */
 
-.badword:hover .tooltiptext {
+/* .badword:hover .bwtext {
     visibility: visible;
+    
+}
+
+bwtext:hover {
+    border-bottom: 1px dotted black;
+    background-color: yellow;
+}  */
+
+footer p {
+    /* margin-top: 10px; */
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav h2, p {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav h2 {
+    padding: 0px 10px;
+}
+
+.sidenav p {
+    font-size: 18px;
+    padding: 0px 10px;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+    color: red;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
 }
 
 
 
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+@media screen and (max-width: 1120px) {
+
+    nav {
+        width: 100%;
+        
+        
+    }
+
+    #nav-1, #nav-2  {
+        /* margin: auto; */
+        width: 50%;
+        padding: 0px 20px;
+        
+    }
+
+    ul {
+        padding: 0px 20px;  
+    }
+    
+}
+
+@media screen and (max-width: 810px) {
+
+    * {
+        border: 1px solid red;
+    }
+    nav {
+        width: 100%;
+        
+        
+    }
+
+    #nav-1, #nav-2  {
+        /* margin: auto; */
+        width: 50%;
+        padding: 0px 20px;
+        
+    }
+
+    
+}
