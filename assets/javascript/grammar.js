@@ -101,7 +101,7 @@
                 //console.log(JSON.parse(JSON.stringify(apiResult))); 
                 console.log(response.errors);
 
-                $('#test').append(str);
+                $('#user-input').append(str);
                 //$('#test').append(res);
 
                 //$(res[j]).css("color", "red");
@@ -172,7 +172,7 @@
                 // This piece of code makes all error words red
                 // An error word is a word the API identifies as incorrect
                 // Is there a difference between grammar mistakes and spelling mistakes? Use two different colors?
-                var p = document.getElementById('test');
+                var p = document.getElementById('user-input');
                 var newInput = p.innerHTML
                 console.log(newInput);
                 //var bWordArr = ['i', 'bke'];

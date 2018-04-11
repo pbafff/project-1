@@ -1,106 +1,70 @@
 /* Grammar Guru Style Sheet */
 
 * {
-
-    -webkit-box-sizing: border-box;
- -moz-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
-
-    /* border: 1px solid red; */
-    /*margin: 0;
-    padding: 0;
-    outline: 0;*/
 }
-
 
 body {
-    background:linear-gradient( 
-    rgba(255, 0, 0, 0.45),
-rgba(255, 0, 0, 0.45)
-),
-    /* #051937, #004d7a, #008793, #00bf72, #a8eb12); */
-url("../images/scenicMountain.jpg")cover no-repeat; 
-
     margin: 0;
-    z-index: 0;
+
+    /* background:linear-gradient( 
+    rgba(255, 0, 0, 0.45),
+    rgba(255, 0, 0, 0.45)),
+    url("../images/scenicMountain.jpg")cover no-repeat; 
+    #051937, #004d7a, #008793, #00bf72, #a8eb12); 
+
+    rgba(5, 25, 55, 1)
+    rgba(0, 77, 122, 1)
+    rgba(0, 135, 147, 1)
+    rgba(0, 191, 114, 1)
+    rgba(168, 235, 18, 1)
+    */
+    
 }
 
-body:before{
-   /* position: absolute; */
+/* body:before {
    opacity: 0.5;
    content:" ";
    top:0;
    left:0;
    width:100%;
    height:100%;
-   /* display: block; */
    z-index: 0;
-}   
-
-
-
-
-/* body {
-    
-    margin: 0px;
+   position: absolute; 
+    display: block;
 } */
-    /* background-color: skyblue; */
-    /*  background-image: url('../images/bk-2.jpg');
-    background-size: cover; */
-    /* background-image: linear-gradient(to left bottom, #ddb00b, #ff8222, #ff4059, #ff009c, #d620e7);*/ 
-    /* Source (https://mycolor.space/gradient?ori=to+left+bottom&hex=%23DDB00B&hex2=%23D620E7&sub=1)
+
+/* BACKGROUND IMAGE WITH OVERLAY */
+/* SOURCE: (https://spin.atomicobject.com/2015/04/07/css-multiple-backgrounds/) */
+
+#element-with-background-image {
+    background-image:
+        linear-gradient(to right, rgba(5, 25, 55, 1), rgba(0, 77, 122, .8), rgba(0, 135, 147, .4), rgba(0, 191, 114, .4), rgba(168, 235, 18, 1)), 
+        url('../images/mountain.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
 }
 
+
+/* linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),  */
+
+/* NAV + HEADER */
 nav {
-    background-color: white;
-    opacity:0.9;
     top: 0;
     width: 100%;
     position: fixed;
+    /* background-color: white;
+    opacity:0.9; */
+    /* box-shadow: 0 10px 6px -6px #777;
     -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777;
-    box-shadow: 0 10px 6px -6px #777;
-}
-
-
-
-/* Main Input Div */
-.audio {
-    Left: 5px;
-}
-#main-content {   
-    border: 1px solid #ccc;
-    margin: auto;
-    width: 50%;  
-    height: 200px;
-
-    background-color:silver;
-
-
-    -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777;
-    box-shadow: 0 10px 6px -6px #777;
-    margin-top: 200px;  
-
-}
-#transform{
-        clear: both;
-        overflow: auto;
-        border: 1px solid #ccc;
-        margin: auto;
-        padding: 3px;
-        width: 50%;  
-        height: 200px;
-        background-color: silver;
-        -webkit-box-shadow: 0 10px 6px -6px #777;
-        -moz-box-shadow: 0 10px 6px -6px #777;
-        box-shadow: 0 10px 6px -6px #777;
-        margin-top: 200px; 
-        transform: rotate(20deg);
-        position: absolute;
-        z-index: 1;
-
+    -moz-box-shadow: 0 10px 6px -6px #777; */  
 }
 
 h1 {
@@ -108,96 +72,6 @@ h1 {
     color: white;
     font-size: 50px;
     font-weight: 400;
-}
-
-
-
-/* User Input Div */
-#user-input-div {
-    clear: both;
-    overflow: auto;
-    margin-top: 20px;
-    width: 100%;
-    padding: 0px 20px;
-    text-align: center;
-}
-
-/* Input Text */
-
-textarea[type=text] {
-
-
-    padding:5px; 
-    text-align: center;
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
-    font-size: 20px;
-
-    width: 100%;
-    height: 80px;
-    font-family: times;
-    margin: 2px;
-}
-
-
-/* Input Text */
-
-textarea[type=text]:focus {
-
-
-    border-color:#333;
-}
-
-/* Button Div */
-#button-div {
-    margin: auto;
-    width: 100%;
-    /* border: 1px solid red;*/
-    padding: 0px 20px;
-    display: flex;
-    margin-top: 20px;
-}
-
-/* Submit and Clear Buttons */
-button[type=submit] {
-    width: 50%;
-    margin: 4px;
-    padding:20px 0px; 
-    background:#ccc; 
-    border:0 none;
-    cursor:pointer;
-    
-}
-
-button[type=submit]:hover {
-    background-color: purple; 
-    color: white;
-    font-weight: bold;
-} 
-
-/*
-Button Effects: https://codepen.io/giana/pen/BZaGyP?q=box%20shadow&order=popularity&depth=everything&show_forks=false
-*/
-.guruContainer {
-    background-color: silver;
-    margin: auto;
-    border: 2px solid gray;
-    width: 220px;
-    height: 220px;
-
-}
-.avatar-guru {
-    animation: float 6s ease-in-out infinite;
-    margin: auto;
-}
-nav {
-    top: 0;
-    position: fixed;
-
-    /* border: 1px solid red; */
-    width: 100%;
-    /* background-image: url(../images/bk-2.jpg); */
-    
 }
 
 ul {
@@ -212,75 +86,48 @@ ul {
     overflow: hidden; */
     /* top: 20px; */
  }
+
  li {
     padding: 20px;
     float: right;
-
-
  }
+
  li:hover {
      background-color: red;
-    
  }
 
-footer {
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    /* background-color: white; */
+/* Main Input Div */
+/*.audio { Left: 5px;}*/
 
-    /* background-image: url(../images/bk-2.jpg); */
-    opacity:0.9;
-    color: white;
+#main-content {   
+    border: 1px solid #ccc;
+    margin: auto;
+    width: 50%;  
+    height: 200px;
+    background-color:white;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+    margin-top: 200px;  
 }
 
-.color {
-    color: red;
-    /* This will mark the bad word red */
-    /*text-decoration: 1px underline red;*/
-    
-}
-
-.badword {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-}
-
-.badword .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: white;
-    color: green;
-    font-weight: bold;
-    border: 1px solid grey;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-
-    /* Position the tooltip */
+#transform{
+    clear: both;
+    overflow: auto;
+    border: 1px solid #ccc;
+    margin: auto;
+    padding: 3px;
+    width: 50%;  
+    height: 200px;
+    background-color: silver;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+    margin-top: 200px; 
+    transform: rotate(20deg);
     position: absolute;
     z-index: 1;
 }
-
-.badword:hover .tooltiptext {
-    visibility: visible;
-}
-
-
-/* .article {
-    width:100px;
-    height:100px;
-    border:1px solid grey;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 10px;
-    position: relative;
-    color:white;
-   } */
 
 /* Style the tab */
 .tab {
@@ -312,8 +159,137 @@ footer {
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 6px 12px;
+    padding: 20px 12px;
     border: 1px solid #ccc;
     border-top: none;
 }
+
+.p-tab { /* Not fully working */
+    text-align: center;
+    padding: 10px 10px;
+    margin-top: 20px;
+}
+
+/* User Input Div */
+#user-input-div {
+    clear: both;
+    overflow: auto;
+    margin-top: 20px;
+    width: 100%;
+    padding: 0px 20px;
+    text-align: center;
+}
+
+/* Input Text */
+textarea[type=text] {
+    padding:5px; 
+    text-align: center;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    font-size: 20px;
+    width: 100%;
+    height: 80px;
+    margin: 2px;
+
+}
+
+/* Input Text */
+textarea[type=text]:focus {
+    border-color:#333;
+}
+
+/* Button Div */
+#button-div {
+    margin: auto;
+    width: 100%;
+    /* border: 1px solid red;*/
+    padding: 0px 20px;
+    display: flex;
+    margin-top: 20px;
+}
+
+/* Submit and Clear Buttons */
+button[type=submit] {
+    width: 50%;
+    margin: 4px;
+    padding:20px 0px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    
+}
+
+#submit-button:hover {
+    background-color: red; 
+    color: white;
+    font-weight: bold;
+} 
+
+#clear-button:hover {
+    background-color: red; 
+    color: white;
+    font-weight: bold;
+} 
+
+/*
+Button Effects: https://codepen.io/giana/pen/BZaGyP?q=box%20shadow&order=popularity&depth=everything&show_forks=false
+*/
+.guruContainer {
+    background-color: silver;
+    margin: auto;
+    border: 2px solid gray;
+    width: 220px;
+    height: 220px;
+}
+
+.avatar-guru {
+    animation: float 6s ease-in-out infinite;
+    margin: auto;
+}
+
+footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.color {
+    color: red;
+    /* This will mark the bad word red */
+    /*text-decoration: 1px underline red;*/
+}
+
+
+/* HOVERING OVER WORDS */
+.badword {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.badword .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: white;
+    color: green;
+    font-weight: bold;
+    border: 1px solid grey;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.badword:hover .tooltiptext {
+    visibility: visible;
+}
+
+
 

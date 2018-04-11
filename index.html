@@ -11,7 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 </head>
 
-<body class="image">
+<body id="element-with-background-image">
+    <div >
 
 
 
@@ -32,16 +33,17 @@
 
     <div id="main-content">
         <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'London')">User Input</button>
-            <button class="tablinks" onclick="openCity(event, 'Paris')">Sitemap URL</button>
+            <button class="tablinks" onclick="openCity(event, 'London')">Sitemap URL</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">User Input</button>
+
             <div id="London" class="tabcontent">
-                <h3>User Input</h3>
-                <p>London is the capital city of England.</p>
+                <br>
+                <p class="p-tab">Enter your bad grammar below.</p>
                 <!-- user input  -->
                 <div id="user-input-div">
                     <!-- Try This Instead of Input <textarea id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"></textarea>-->
                     <!-- <input id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"> -->
-                    <textarea id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"></textarea>
+                    <textarea id="user-input" class="input-class" type="text" placeholder=""></textarea>
                 </div>
                 <div id="test">test output</div>
                 <div id="button-div">
@@ -50,16 +52,21 @@
                 </div>
             </div>
             <div id="Paris" class="tabcontent">
-                <h3>Sitemap URL</h3>
-                <p>Paris is the capital of France.</p>
+                <br>
+                <p class="p-tab">Enter in your Sitemap URL below
+                    <br> 
+                    <a href="#">What's a Sitemap URL?</a>
+                </p>
+                
                 <!-- site map url -->
-
                 <div id="user-input-div">
                     <!-- Try This Instead of Input <textarea id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"></textarea>-->
                     <!-- <input id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"> -->
-                    <textarea id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"></textarea>
+                    <textarea id="user-input" class="input-class" type="text" placeholder=""></textarea>
                 </div>
-                <div id="test">test output</div>
+                
+                <!-- <div id="test">test output</div> -->
+                
                 <div id="button-div">
                     <button id="clear-button" type="submit">Clear</button>
                     <button id="submit-button" type="submit">Submit</button>
@@ -93,7 +100,7 @@
     <script type="text/javascript" src="assets/javascript/grammar.js"></script>
 
 
-
+</div>
 </body>
 
 </html>
