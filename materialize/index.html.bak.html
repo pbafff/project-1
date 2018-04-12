@@ -60,18 +60,17 @@
             </button>
 <!-- add test link to input div -->
 <!-- add test link and populate to input div on click-->
-
-            <a href="#index.html" id="logo">Gammer Guru</a>
-            <a href="#test1.html" class="grammarlink">test1</a>
-            <a href="#test2.html" class="grammarlink">test2</a>
-            <a href="#test3.html" class="grammarlink">test3</a>
-            <a href="#test4.html" class="grammarlink">test4</a>
-            <a href="#test5.html" class="grammarlink">test5</a>
-            <a href="#test6.html" class="grammarlink">test6</a>
-            <a href="#test7.html" class="grammarlink">test7</a>
-            <a href="#test8.html" class="grammarlink">test8</a>
-            <a href="#test9.html" class="grammarlink">test9</a>
-            <a href="#test10.html" class="grammarlink">test10</a>
+            <a href="index.html" id="logo">Gammer Guru</a>
+            <a href="test1.html">test1</a>
+            <a href="test2.html">test2</a>
+            <a href="test3.html">test3</a>
+            <a href="test4.html">test4</a>
+            <a href="test5.html">test5</a>
+            <a href="test6.html">test6</a>
+            <a href="test7.html">test7</a>
+            <a href="test8.html">test8</a>
+            <a href="test9.html">test9</a>
+            <a href="test10.html">test10</a>
         </div>
     </div>
     <br>
@@ -91,41 +90,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
-
-    <script type="text/javascript">
-                function loadData(urlToGet) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      $('#textarea1').val(this.responseText);
-      //document.getElementById("textarea1").innerHTML =
-      console.log(document.getElementById("textarea1").innerHTML);
-       $('#textarea1').focus();
-       $('#textarea1').attr('rows', '4');
-    }
-  };
-  xhttp.open("GET", urlToGet+".html", true);
-  xhttp.send();
-}
-
-        $(document).ready(function() {
-    $(".grammarlink").click(function() {
-        //Do stuff when clicked
-         // this is your link
-        $link = $(this);
-        $url = $link[0].childNodes[0].data;
-        $urlToGet =  $url
-       // console.log($link);
-       //   console.log($link[0]);
-        //    console.log($link[0].childNodes[0]);
-        console.log($urlToGet);
-        loadData($urlToGet); 
-        return false; 
-    });
-});
-
-
-    </script>
 
 </body>
 
