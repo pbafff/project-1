@@ -83,9 +83,11 @@ $('#submit-button-3').on('click', function () { //submit selectors
                 numPagesVisited++;
                 $('#pages-visited').empty().text("URLs scanned: " + numPagesVisited);
                 $('#modal-test').append('<a target="_blank" href="' + URL + '">' + URL + '</a><a id="link-' + numPagesVisited + '" class="error-link" href="#" onclick="var element = document.querySelector(`#result-modal-' + numPagesVisited + '`);element.style.display = `block`;"></a><hr>');
+
                 $('#url-modal').append('<div id="result-modal-' + numPagesVisited + '" style="display: none" class="w3-modal"></div>');
-                $('#result-modal-' + numPagesVisited).prepend("<span onclick=`document.getElementById(`result-modal-' + identity + '`).style.display=`none` >&times;</span><hr>");
-                //put URL visited on modal
+
+                $('#result-modal-' + numPagesVisited).prepend("<span onclick='var element = document.querySelector(`#result-modal-" + numPagesVisited + "`); element.style.display=`none`;' >&times;</span><hr>");
+                
                 var $c = cheerio.load(response);
                 if ($('#selector-input-2').val() === "") {
                     var results = $c($('#selector-input-1').val()).text().trim();
