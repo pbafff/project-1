@@ -31,7 +31,7 @@ $('#submit-button-2').on('click', function () { //grab sitemap
     }).then(response => response.json())
         .catch(error => console.error('Error:', error))
         .then(function (response) {
-            console.log(response);
+            console.log("This is the sitemap: " + response);
             parseString(response, function (err, result) {
                 var xmlString = JSON.stringify(result);
                 var xmlObj = JSON.parse(xmlString);
@@ -48,11 +48,9 @@ $('#submit-button-2').on('click', function () { //grab sitemap
     // })
 })
 
-$('button3').on('click', function () {
 
-})
 
-$('#button4').on('click', function () { //submit selectors
+$('#submit-button-3').on('click', function () { //submit selectors
     crawl();
     function crawl() {
         if (numPagesVisited >= 10) {
@@ -83,14 +81,21 @@ $('#button4').on('click', function () { //submit selectors
             .catch(error => console.error('Error:', error))
             .then(function (response) {
                 numPagesVisited++;
+                $('#pages-visited').empty().text("URLs scanned: " + numPagesVisited);
+                $('#modal-test').append('<a target="_blank" href="' + URL + '">' + URL + '</a><a id="link-' + numPagesVisited + '" class="error-link" href="#" onclick="var element = document.querySelector(`#result-modal-' + numPagesVisited + '`);element.style.display = `block`;"></a><hr>');
+                $('#url-modal').append('<div id="result-modal-' + numPagesVisited + '" style="display: none" class="w3-modal"></div>');
+                $('#result-modal-' + numPagesVisited).prepend("<span onclick=`document.getElementById(`result-modal-' + identity + '`).style.display=`none` >&times;</span><hr>");
+                //put URL visited on modal
                 var $c = cheerio.load(response);
-                if ($('#input3').val() === "") {
-                    var results = $c($('#input2').val()).text().trim();
+                if ($('#selector-input-2').val() === "") {
+                    var results = $c($('#selector-input-1').val()).text().trim();
+                    grammarCheck(results, 'result-modal-' + numPagesVisited, numPagesVisited);
                 } else {
-                    var results = $c($('#input2').val()).find($('#input3').val()).text().trim();
+                    var results = $c($('#selector-input-1').val()).find($('#selector-input-2').val()).text().trim();
+                    grammarCheck(results, 'result-modal-' + numPagesVisited, numPagesVisited);
                 }
 
-                $('#stuff').append("<p>" + results + "</p>");
+                // $('#stuff').append("<p>" + res   ults + "</p>");
                 callback();
             })
         // })
