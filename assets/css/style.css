@@ -255,12 +255,12 @@ Button Effects: https://codepen.io/giana/pen/BZaGyP?q=box%20shadow&order=popular
     background-color: yellow;
 }
 
-.bwtext {
+/* .bwtext {
     visibility: hidden;
     position: absolute;
-}
+} */
 
-:hover .bwtext {
+.bwtext {
     visibility: visible;
     background-color: white;
     border: 1px solid black;

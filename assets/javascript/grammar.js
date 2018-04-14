@@ -37,6 +37,7 @@ $('#clear-button').on("click", function () {
 
     // Empty #test div
     $('#test').empty();
+    arr = [];
 });
 
 // When user clicks on the Submit button

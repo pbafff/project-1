@@ -86,7 +86,7 @@ $('#submit-button-3').on('click', function () { //submit selectors
 
                 $('#url-modal').append('<div style="display: none" class="w3-modal" id="modal-' + numPagesVisited + '"><div class="w3-modal-content" id="result-modal-content-' + numPagesVisited +'"><div class="w3-modal-container" id="result-modal-' + numPagesVisited + '"></div></div></div>');
 
-                $('#result-modal-content-' + numPagesVisited).prepend("<header class='w3-container'><span class='w3-button w3-display-topright' onclick='var element = document.querySelector(`#modal-" + numPagesVisited + "`); element.style.display=`none`;' >&times;</span></header>");//place header inside w3-modal-content
+                $('#result-modal-content-' + numPagesVisited).prepend("<header class='w3-container'><span class='w3-button w3-display-topright' onclick='var element = document.querySelector(`#modal-" + numPagesVisited + "`); element.style.display=`none`;' >&times;</span></header><br><br>");//place header inside w3-modal-content
                 
                 var $c = cheerio.load(response);
                 if ($('#selector-input-2').val() === "") {
@@ -104,23 +104,23 @@ $('#submit-button-3').on('click', function () { //submit selectors
     }
 })
 
-$('#button2').on('click', function () {
-    var str;
-    var jsdomPromise = new Promise((resolve, reject) => {
-        JSDOM.fromURL(sitemapURLs[0]).then(dom => {
-            str = dom.serialize();
-            str = str.replace(/<!--(.|\s)*?-->/g, "");
-            resolve(str);
-        });
-    });
-    jsdomPromise.then((html) => {
-        posthtml()
-            .use(beautify({
-                rules: {
-                    indent: 2,
-                    eol: '\r\n'
-                }
-            })).process(html, { sync: false })
-            .then((result) => $('#thing').html(hljs.highlightAuto(result.html).value));
-    })
-})
+// $('#button2').on('click', function () {
+//     var str;
+//     var jsdomPromise = new Promise((resolve, reject) => {
+//         JSDOM.fromURL(sitemapURLs[0]).then(dom => {
+//             str = dom.serialize();
+//             str = str.replace(/<!--(.|\s)*?-->/g, "");
+//             resolve(str);
+//         });
+//     });
+//     jsdomPromise.then((html) => {
+//         posthtml()
+//             .use(beautify({
+//                 rules: {
+//                     indent: 2,
+//                     eol: '\r\n'
+//                 }
+//             })).process(html, { sync: false })
+//             .then((result) => $('#thing').html(hljs.highlightAuto(result.html).value));
+//     })
+// })

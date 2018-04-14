@@ -1,4 +1,4 @@
-var grammarCheck = function(textInput, textOutput, numPagesVisited) {
+var grammarCheck = function (textInput, textOutput, numPagesVisited) {
     // Console logging the click to make sure this triggers the function
     console.log("Submit button has been clicked");
 
@@ -20,7 +20,7 @@ var grammarCheck = function(textInput, textOutput, numPagesVisited) {
     // Taking var est and putting it into the #test div
     // var r = $("#test").html('"' + est + '"');
 
-
+    var arr =[];
     // Pushing "A+B+C" into the empty array var arr
     arr.push(est); // Working... WOOooooooooOooooo!
     console.log(JSON.parse(JSON.stringify(arr))); // Check that var is being pushed into an array
@@ -51,7 +51,6 @@ var grammarCheck = function(textInput, textOutput, numPagesVisited) {
 
     }).then(function (response) {
 
-        var arrCompare = [];
 
         //Joining the split words with "+"
         //var est2 = res.join('" "');
@@ -85,14 +84,10 @@ var grammarCheck = function(textInput, textOutput, numPagesVisited) {
         }
         // Looping through the results returned by API
         for (var i = 0; i < response.errors.length; i++) {
-            console.log("i1", i);
-            // Looping through the user input array
 
             console.log('response from api ', response.errors);
-            console.log('response from api ', response.errors[i].bad);
 
-
-            badWords.push(response.errors[i].bad)
+            badWords.push(response.errors[i].bad);
             console.log('bad words array', badWords);
 
             // betterWords.push(response.errors[i].better)
@@ -101,40 +96,6 @@ var grammarCheck = function(textInput, textOutput, numPagesVisited) {
             var betterWords = response.errors[i].better.join('\n');
             console.log('resErr', betterWords);
 
-            // if (response.errors[i].bad.indexOf(res[j]) !== -1) {
-            //     console.log('true');
-            //     // console.log(apiResult[i]);
-
-            //     console.log("res j ",res[j]);
-            //     // GOAL - IF TRUE HIGHLIGHT THE SPECIFIC WORD(S) RED //
-            //     res.splice(j,1,res[j]);
-
-            //     //if (res[j]) {
-            //      $('#test').append(res[j]).css("color", "red");   
-            //     //}
-
-
-            //     // // $('#test').text('<u style="color:green;"> ' + res[j] + '</u>');
-            //     // // $('#test').append('<u style="color:green;"> ' + res[j] + '</u>');
-
-            //     // console.log("res[j]", res[j]);
-            //     // console.log("j2", j);
-            //     // console.log("i2", i);
-            // }
-
-            // else if (res[j].indexOf(response.errors[i].bad) !== -1){
-            //     console.log('else res[j] ', res[j]);
-
-            //     //if (res[j]) {
-            //         $('#test').append(res[j]).css("color", "green");   
-            //     //}
-
-            //     //$('#test').append(res[j]).css("color", "black");
-
-
-
-            // }
-            //  }
         }
 
         // This piece of code makes all error words red
@@ -146,10 +107,11 @@ var grammarCheck = function(textInput, textOutput, numPagesVisited) {
         var newInput = p.innerHTML
         console.log(newInput);
         //var bWordArr = ['i', 'bke'];
-
+        var spanIterator = 0;
         badWords.forEach(function (bWord) {
             console.log('bad word ', bWord);
-            newInput = newInput.replace(bWord, `<span class="color badword">${bWord}<span class="bwtext">try :${betterWords}</span></span>`)
+            spanIterator++;
+            newInput = newInput.replace(bWord, `<span class="color badword">${bWord}</span><span class="bwtext">try :${betterWords}</span>`)
         });
         // when you hover over badwords
 
@@ -161,6 +123,6 @@ var grammarCheck = function(textInput, textOutput, numPagesVisited) {
 
 
         p.innerHTML = newInput
-    
+
     })
-    }
+}
