@@ -82,11 +82,11 @@ $('#submit-button-3').on('click', function () { //submit selectors
             .then(function (response) {
                 numPagesVisited++;
                 $('#pages-visited').empty().text("URLs scanned: " + numPagesVisited);
-                $('#modal-test').append('<a target="_blank" href="' + URL + '">' + URL + '</a><a id="link-' + numPagesVisited + '" class="error-link" href="#" onclick="var element = document.querySelector(`#result-modal-' + numPagesVisited + '`);element.style.display = `block`;"></a><hr>');
+                $('#modal-test').append('<a target="_blank" href="' + URL + '">' + URL + '</a><a id="link-' + numPagesVisited + '" class="error-link" href="#" onclick="var element = document.querySelector(`#modal-' + numPagesVisited + '`);element.style.display = `block`;"></a><hr>');
 
-                $('#url-modal').append('<div id="result-modal-' + numPagesVisited + '" style="display: none" class="w3-modal"></div>');
+                $('#url-modal').append('<div style="display: none" class="w3-modal" id="modal-' + numPagesVisited + '"><div class="w3-modal-content" id="result-modal-content-' + numPagesVisited +'"><div class="w3-modal-container" id="result-modal-' + numPagesVisited + '"></div></div></div>');
 
-                $('#result-modal-' + numPagesVisited).prepend("<span onclick='var element = document.querySelector(`#result-modal-" + numPagesVisited + "`); element.style.display=`none`;' >&times;</span><hr>");
+                $('#result-modal-content-' + numPagesVisited).prepend("<header class='w3-container'><span onclick='var element = document.querySelector(`#modal-" + numPagesVisited + "`); element.style.display=`none`;' >&times;</span></header>");//place header inside w3-modal-content
                 
                 var $c = cheerio.load(response);
                 if ($('#selector-input-2').val() === "") {
