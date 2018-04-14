@@ -11,7 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 </head>
 
-<body class="image">
+<body id="element-with-background-image">
+
 
 
 
@@ -23,9 +24,17 @@
         </div>
         <div id="nav-2">
             <ul>
-                <li>CONTACT</li>
-                <li>PLANS AND PRICING</li>
-                <li>FAQ</li>
+                <li>
+                    <a href="contact.html">CONTACT</a>
+                </li>
+                <li>
+                    <a href="pricing.html">PLANS AND PRICING</a>
+                </li>
+                <li>
+                    <a href="faq.html">FAQ</a>
+                </li>
+                <li>
+                    <a href="index.html">HOME</a>
             </ul>
         </div>
     </nav>
@@ -34,43 +43,45 @@
         <div class="tab">
             <button class="tablinks" onclick="openCity(event, 'London')">User Input</button>
             <button class="tablinks" onclick="openCity(event, 'Paris')">Sitemap URL</button>
+
             <div id="London" class="tabcontent">
-                <h3>User Input</h3>
-                <p>London is the capital city of England.</p>
+                <br>
+                <p class="p-tab">Enter your bad grammar below.</p>
                 <!-- user input  -->
                 <div id="user-input-div">
-                    <!-- Try This Instead of Input <textarea id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"></textarea>-->
-                    <!-- <input id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"> -->
-                    <textarea id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"></textarea>
+                    <textarea id="user-input" class="input-class" type="text" placeholder=""></textarea>
                 </div>
-                <div id="test">test output</div>
+
+                <!-- This is where the output will be -->
+                <div id="test"></div>
                 <div id="button-div">
                     <button id="clear-button" type="submit">Clear</button>
                     <button id="submit-button" type="submit">Submit</button>
                 </div>
             </div>
             <div id="Paris" class="tabcontent">
-                <h3>Sitemap URL</h3>
-                <p>Paris is the capital of France.</p>
-                <!-- site map url -->
+                <br>
+                <p class="p-tab">Enter in your Sitemap URL below
+                    <br>
+                    <a href="#">What's a Sitemap URL?</a>
+                </p>
 
+                <!-- site map url -->
                 <div id="user-input-div">
                     <!-- Try This Instead of Input <textarea id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"></textarea>-->
                     <!-- <input id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"> -->
-                    <textarea id="user-input" class="input-class" type="text" placeholder="Enter your bad grammar or Sitemap URL"></textarea>
+                    <textarea id="user-input-2" class="input-class" type="text" placeholder=""></textarea>
                 </div>
-                <div id="test">test output</div>
+                <!-- This is where the output will be -->
+                <div id="test"></div>
                 <div id="button-div">
-                    <button id="clear-button" type="submit">Clear</button>
-                    <button id="submit-button" type="submit">Submit</button>
+                    <button id="clear-button-2" type="submit">Clear</button>
+                    <button id="submit-button-2" type="submit">Submit</button>
                 </div>
             </div>
-
         </div>
-
-
+        <h2 style="font-size: 40px;font-weight: 300; text-align: center;margin-top: 40px;opacity: 0.5;">Welcome</h2>
     </div>
-
 
     <!-- Footer -->
     <footer>
@@ -84,6 +95,19 @@
         -->
     </footer>
 
+    <!-- Library - used to store words you want to avoid the API from showing in the results -->
+    <!--CREATE A LOOP IN API TO MAKE THIS WORK -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h2>Library</h2>
+        <p>You have entered the Achaia Records
+            <br>
+            <br> Save all words you would like the Grammar Guru to ignore.</p>
+    </div>
+
+    <div id="main">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    </div>
 
     <!-- JQuery file -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -91,6 +115,7 @@
     <!-- JS file for application effects -->
     <script type="text/javascript" src="assets/javascript/effects.js"></script>
     <script type="text/javascript" src="assets/javascript/grammar.js"></script>
+    <script type="text/javascript" src="assets/javascript/bundle.js"></script>
 
 
 
