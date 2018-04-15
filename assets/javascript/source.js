@@ -31,7 +31,7 @@ $('#submit-button-2').on('click', function () { //grab sitemap
     }).then(response => response.json())
         .catch(error => console.error('Error:', error))
         .then(function (response) {
-            console.log(response);
+            console.log("This is the sitemap: " + response);
             parseString(response, function (err, result) {
                 var xmlString = JSON.stringify(result);
                 var xmlObj = JSON.parse(xmlString);
@@ -48,11 +48,9 @@ $('#submit-button-2').on('click', function () { //grab sitemap
     // })
 })
 
-$('button3').on('click', function () {
 
-})
 
-$('#button4').on('click', function () { //submit selectors
+$('#submit-button-3').on('click', function () { //submit selectors
     crawl();
     function crawl() {
         if (numPagesVisited >= 10) {
@@ -73,47 +71,62 @@ $('#button4').on('click', function () { //submit selectors
             url: URL,
             key: "8b5dcaf7cdfb9c46221d492eec6560c571d6ec218b2485c54075ab7840fa77f9"
         }
+        const controller = new AbortController();
+        const signal = controller.signal;
+        $('#clear-button-3').on('click', function () { 
+            controller.abort();
+        });
         fetch(kevsServer, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: new Headers({
                 'Content-Type': 'application/json'
-            })
+            }),
+            signal,
         }).then(response => response.json())
             .catch(error => console.error('Error:', error))
             .then(function (response) {
                 numPagesVisited++;
+                $('#pages-visited').empty().text("URLs scanned: " + numPagesVisited);
+                $('#modal-test').append('<a target="_blank" href="' + URL + '">' + URL + '</a><a id="link-' + numPagesVisited + '" class="error-link" href="#" onclick="var element = document.querySelector(`#modal-' + numPagesVisited + '`);element.style.display = `block`;"></a><hr>');
+
+                $('#url-modal').append('<div style="display: none" class="w3-modal" id="modal-' + numPagesVisited + '"><div class="w3-modal-content" id="result-modal-content-' + numPagesVisited + '"><div class="w3-modal-container" id="result-modal-' + numPagesVisited + '"></div></div></div>');
+
+                $('#result-modal-content-' + numPagesVisited).prepend("<header class='w3-container'><span class='w3-button w3-display-topright' onclick='var element = document.querySelector(`#modal-" + numPagesVisited + "`); element.style.display=`none`;' >&times;</span></header><br><br>");//place header inside w3-modal-content
+
                 var $c = cheerio.load(response);
-                if ($('#input3').val() === "") {
-                    var results = $c($('#input2').val()).text().trim();
+                if ($('#selector-input-2').val() === "") {
+                    var results = $c($('#selector-input-1').val()).text().trim();
+                    grammarCheck(results, 'result-modal-' + numPagesVisited, numPagesVisited);
                 } else {
-                    var results = $c($('#input2').val()).find($('#input3').val()).text().trim();
+                    var results = $c($('#selector-input-1').val()).find($('#selector-input-2').val()).text().trim();
+                    grammarCheck(results, 'result-modal-' + numPagesVisited, numPagesVisited);
                 }
 
-                $('#stuff').append("<p>" + results + "</p>");
+                // $('#stuff').append("<p>" + res   ults + "</p>");
                 callback();
             })
         // })
     }
 })
 
-$('#button2').on('click', function () {
-    var str;
-    var jsdomPromise = new Promise((resolve, reject) => {
-        JSDOM.fromURL(sitemapURLs[0]).then(dom => {
-            str = dom.serialize();
-            str = str.replace(/<!--(.|\s)*?-->/g, "");
-            resolve(str);
-        });
-    });
-    jsdomPromise.then((html) => {
-        posthtml()
-            .use(beautify({
-                rules: {
-                    indent: 2,
-                    eol: '\r\n'
-                }
-            })).process(html, { sync: false })
-            .then((result) => $('#thing').html(hljs.highlightAuto(result.html).value));
-    })
-})
+// $('#button2').on('click', function () {
+//     var str;
+//     var jsdomPromise = new Promise((resolve, reject) => {
+//         JSDOM.fromURL(sitemapURLs[0]).then(dom => {
+//             str = dom.serialize();
+//             str = str.replace(/<!--(.|\s)*?-->/g, "");
+//             resolve(str);
+//         });
+//     });
+//     jsdomPromise.then((html) => {
+//         posthtml()
+//             .use(beautify({
+//                 rules: {
+//                     indent: 2,
+//                     eol: '\r\n'
+//                 }
+//             })).process(html, { sync: false })
+//             .then((result) => $('#thing').html(hljs.highlightAuto(result.html).value));
+//     })
+// })
