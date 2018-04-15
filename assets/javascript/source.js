@@ -71,12 +71,18 @@ $('#submit-button-3').on('click', function () { //submit selectors
             url: URL,
             key: "8b5dcaf7cdfb9c46221d492eec6560c571d6ec218b2485c54075ab7840fa77f9"
         }
+        const controller = new AbortController();
+        const signal = controller.signal;
+        $('#clear-button-3').on('click', function () { 
+            controller.abort();
+        });
         fetch(kevsServer, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: new Headers({
                 'Content-Type': 'application/json'
-            })
+            }),
+            signal,
         }).then(response => response.json())
             .catch(error => console.error('Error:', error))
             .then(function (response) {
@@ -84,10 +90,10 @@ $('#submit-button-3').on('click', function () { //submit selectors
                 $('#pages-visited').empty().text("URLs scanned: " + numPagesVisited);
                 $('#modal-test').append('<a target="_blank" href="' + URL + '">' + URL + '</a><a id="link-' + numPagesVisited + '" class="error-link" href="#" onclick="var element = document.querySelector(`#modal-' + numPagesVisited + '`);element.style.display = `block`;"></a><hr>');
 
-                $('#url-modal').append('<div style="display: none" class="w3-modal" id="modal-' + numPagesVisited + '"><div class="w3-modal-content" id="result-modal-content-' + numPagesVisited +'"><div class="w3-modal-container" id="result-modal-' + numPagesVisited + '"></div></div></div>');
+                $('#url-modal').append('<div style="display: none" class="w3-modal" id="modal-' + numPagesVisited + '"><div class="w3-modal-content" id="result-modal-content-' + numPagesVisited + '"><div class="w3-modal-container" id="result-modal-' + numPagesVisited + '"></div></div></div>');
 
                 $('#result-modal-content-' + numPagesVisited).prepend("<header class='w3-container'><span class='w3-button w3-display-topright' onclick='var element = document.querySelector(`#modal-" + numPagesVisited + "`); element.style.display=`none`;' >&times;</span></header><br><br>");//place header inside w3-modal-content
-                
+
                 var $c = cheerio.load(response);
                 if ($('#selector-input-2').val() === "") {
                     var results = $c($('#selector-input-1').val()).text().trim();

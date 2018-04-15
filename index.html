@@ -85,7 +85,7 @@
                         <div id="pages-visited"></div>
                         <div id="modal-test"></div>
                         <div id="button-div">
-                            <button id="clear-button-3" type="submit">Clear</button>
+                            <button id="clear-button-3" type="submit" onclick="var list = document.getElementById('modal-test'); while (list.firstChild) {list.removeChild(list.firstChild)};  var visited = document.getElementById('pages-visited'); visited.innerHTML = ''">Clear</button>
                             <button id="submit-button-3" type="submit">Submit</button>
                         </div>
                     </div>
