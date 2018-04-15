@@ -32,7 +32,7 @@ var grammarCheck = function (textInput, textOutput, numPagesVisited) {
     // Storing our TextGears API into var apiKEY
     //var apiKEY = "&key=OTTALGT9NKahAPSw"
 
-    var apiKEY = "&key=DEMO_KEY"
+    var apiKEY = "&key=OTTALGT9NKahAPSw"
 
     // Storing our user input into var userInput
     // Free Trial Limits
